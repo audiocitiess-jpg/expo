@@ -1901,6 +1901,9 @@ importers:
         specifier: ^4.1.2
         version: 4.1.2
     devDependencies:
+      '@types/node':
+        specifier: ^22.14.0
+        version: 22.19.15
       expo-module-scripts:
         specifier: workspace:*
         version: link:../../expo-module-scripts
@@ -18471,7 +18474,7 @@ snapshots:
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 22.13.17
+      '@types/node': 22.19.15
 
   '@types/geojson@7946.0.16': {}
 
@@ -18542,7 +18545,7 @@ snapshots:
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 22.13.17
+      '@types/node': 22.19.15
 
   '@types/keyv@3.1.4':
     dependencies:
@@ -18593,7 +18596,7 @@ snapshots:
 
   '@types/npm-registry-fetch@8.0.9':
     dependencies:
-      '@types/node': 22.13.17
+      '@types/node': 22.19.15
       '@types/node-fetch': 2.6.13
       '@types/npm-package-arg': 6.1.4
       '@types/npmlog': 7.0.0
@@ -18601,7 +18604,7 @@ snapshots:
 
   '@types/npmlog@7.0.0':
     dependencies:
-      '@types/node': 22.13.17
+      '@types/node': 22.19.15
 
   '@types/offscreencanvas@2019.6.4': {}
 
@@ -18683,7 +18686,7 @@ snapshots:
 
   '@types/ssri@7.1.5':
     dependencies:
-      '@types/node': 22.13.17
+      '@types/node': 22.19.15
 
   '@types/stack-utils@2.0.3': {}
 
