@@ -14,7 +14,7 @@ import {
   NavigationBarButtonStyle,
   NavigationBarPosition,
   NavigationBarVisibility,
-} from 'expo-navigation-bar';
+} from '../..';
 
 const debug = Debug('expo:system-navigation-bar:plugin');
 
