@@ -36,6 +36,7 @@ import { FileNotifier } from '../../../utils/FileNotifier';
 import { env } from '../../../utils/env';
 import { installExitHooks } from '../../../utils/exit';
 import { isInteractive } from '../../../utils/interactive';
+import { resolveWatchFolders } from '../../../utils/resolveWatchFolders';
 import { loadTsConfigPathsAsync, TsConfigPaths } from '../../../utils/tsconfig/loadTsConfigPaths';
 import { resolveWithTsConfigPaths } from '../../../utils/tsconfig/resolveWithTsConfigPaths';
 import { isServerEnvironment } from '../middleware/metroOptions';
@@ -936,7 +937,11 @@ export async function withMetroMultiPlatformAsync(
   if (!isDirectoryIn(__dirname, projectRoot)) {
     const reactNativePolyfills: string[] = require('react-native/rn-get-polyfills')();
     watchFolders.push(
-      ...[path.dirname(require.resolve('expo/package.json')), ...reactNativePolyfills]
+      ...resolveWatchFolders('expo', { deep: false }),
+      ...resolveWatchFolders('react-native', { deep: false }),
+      ...resolveWatchFolders('@expo/metro', { deep: true }),
+      ...resolveWatchFolders('@expo/metro-runtime', { deep: true }),
+      ...[config.resolver.emptyModulePath, ...reactNativePolyfills]
         .map((targetPath) => (fs.existsSync(targetPath) ? path.dirname(targetPath) : null))
         .filter((targetPath) => targetPath != null)
     );
