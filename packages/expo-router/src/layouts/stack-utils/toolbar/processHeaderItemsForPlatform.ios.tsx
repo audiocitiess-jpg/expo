@@ -11,7 +11,7 @@ import {
   StackToolbarSpacer,
 } from './StackToolbarSpacer';
 import { convertStackToolbarViewPropsToRNHeaderItem, StackToolbarView } from './StackToolbarView';
-import type { ToolbarPlacement } from './context';
+import type { ToolbarColors, ToolbarPlacement } from './context';
 import { isChildOfType } from '../../../utils/children';
 
 function convertToolbarChildrenToUnstableItems(
@@ -67,7 +67,8 @@ function convertToolbarChildrenToUnstableItems(
  */
 export function processHeaderItemsForPlatform(
   children: ReactNode,
-  placement: ToolbarPlacement
+  placement: ToolbarPlacement,
+  _colors?: ToolbarColors
 ): NativeStackNavigationOptions | null {
   if (placement !== 'left' && placement !== 'right') {
     return null;
