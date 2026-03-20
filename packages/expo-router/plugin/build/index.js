@@ -1,9 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.plugin = void 0;
 const schema_utils_1 = require("@expo/schema-utils");
 const config_plugins_1 = require("expo/config-plugins");
-const pkg = require('expo-router/package.json');
 const schema = require('../options.json');
 const withExpoHeadIos = (config) => {
     return (0, config_plugins_1.withInfoPlist)(config, (config) => {
@@ -31,7 +29,7 @@ const withGammaScreens = (config) => {
         return config;
     });
 };
-const plugin = (config, _props) => {
+const withRouter = (config, _props) => {
     const props = _props || {};
     (0, schema_utils_1.validate)(schema, props);
     withExpoHeadIos(config);
@@ -47,5 +45,4 @@ const plugin = (config, _props) => {
         },
     };
 };
-exports.plugin = plugin;
-exports.default = (props = {}) => [pkg.name, props];
+exports.default = withRouter;
