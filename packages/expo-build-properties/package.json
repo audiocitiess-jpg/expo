@@ -5,16 +5,11 @@
   "main": "build/withBuildProperties.js",
   "types": "build/withBuildProperties.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
+    ".": "./build/withBuildProperties.js",
     "./package.json": "./package.json",
-    ".": {
-      "types": "./build/withBuildProperties.d.ts",
-      "default": "./build/withBuildProperties.js"
-    },
-    "./plugin": {
-      "types": "./build/withBuildProperties.d.ts",
-      "default": "./build/withBuildProperties.js"
-    }
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./build/withBuildProperties.js"
   },
   "scripts": {
     "build": "expo-module build",

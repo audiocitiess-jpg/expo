@@ -6,16 +6,11 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
+    ".": "./build/index.js",
     "./package.json": "./package.json",
-    ".": {
-      "types": "./build/index.d.ts",
-      "default": "./build/index.js"
-    },
-    "./plugin": {
-      "types": "./plugin/build/withAudio.d.ts",
-      "default": "./plugin/build/withAudio.js"
-    }
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/withAudio.js"
   },
   "sideEffects": false,
   "scripts": {

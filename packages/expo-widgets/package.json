@@ -5,16 +5,11 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
+    ".": "./build/index.js",
     "./package.json": "./package.json",
-    ".": {
-      "types": "./build/index.d.ts",
-      "default": "./build/index.js"
-    },
-    "./plugin": {
-      "types": "./plugin/build/index.d.ts",
-      "default": "./plugin/build/index.js"
-    }
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/index.js"
   },
   "scripts": {
     "build": "expo-module build",

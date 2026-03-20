@@ -6,16 +6,14 @@
   "main": "src/index.ts",
   "types": "build/index.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
-    "./package.json": "./package.json",
     ".": {
       "types": "./build/index.d.ts",
       "default": "./src/index.ts"
     },
-    "./plugin": {
-      "types": "./plugin/build/withExpoImage.d.ts",
-      "default": "./plugin/build/withExpoImage.js"
-    }
+    "./package.json": "./package.json",
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/withExpoImage.js"
   },
   "sideEffects": false,
   "scripts": {

@@ -8,23 +8,13 @@
     "./localStorage/install.js"
   ],
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
+    ".": "./build/index.js",
     "./package.json": "./package.json",
-    ".": {
-      "default": "./build/index.js",
-      "types": "./build/index.d.ts"
-    },
-    "./kv-store": {
-      "default": "./kv-store.js",
-      "types": "./kv-store.d.ts"
-    },
-    "./localStorage/install": {
-      "default": "./localStorage/install.js"
-    },
-    "./plugin": {
-      "types": "./plugin/build/withSQLite.d.ts",
-      "default": "./plugin/build/withSQLite.js"
-    }
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./kv-store": "./kv-store.js",
+    "./localStorage/install": "./localStorage/install.js",
+    "./plugin": "./plugin/build/withSQLite.js"
   },
   "scripts": {
     "build": "expo-module build",

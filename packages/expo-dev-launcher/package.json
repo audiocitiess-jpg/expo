@@ -15,12 +15,10 @@
   "license": "MIT",
   "homepage": "https://docs.expo.dev",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
     "./package.json": "./package.json",
-    "./plugin": {
-      "types": "./plugin/build/withDevLauncher.d.ts",
-      "default": "./plugin/build/withDevLauncher.js"
-    }
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/withDevLauncher.js"
   },
   "dependencies": {
     "@expo/schema-utils": "^55.0.2",

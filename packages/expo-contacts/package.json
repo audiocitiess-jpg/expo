@@ -5,8 +5,6 @@
   "main": "src/index.ts",
   "types": "build/index.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
-    "./package.json": "./package.json",
     ".": {
       "types": "./build/index.d.ts",
       "default": "./src/index.ts"
@@ -15,10 +13,10 @@
       "types": "./build/next/index.d.ts",
       "default": "./src/next/index.ts"
     },
-    "./plugin": {
-      "types": "./plugin/build/withContacts.d.ts",
-      "default": "./plugin/build/withContacts.js"
-    }
+    "./package.json": "./package.json",
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/withContacts.js"
   },
   "sideEffects": false,
   "scripts": {

@@ -5,16 +5,14 @@
   "main": "src/StatusBar",
   "types": "build/StatusBar.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
-    "./package.json": "./package.json",
     ".": {
       "types": "./build/StatusBar.d.ts",
       "default": "./src/StatusBar.ts"
     },
-    "./plugin": {
-      "types": "./plugin/build/withStatusBar.d.ts",
-      "default": "./plugin/build/withStatusBar.js"
-    }
+    "./package.json": "./package.json",
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/withStatusBar.js"
   },
   "scripts": {
     "build": "expo-module build",

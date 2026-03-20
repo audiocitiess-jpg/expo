@@ -6,17 +6,15 @@
   "types": "./build/index.d.ts",
   "bin": "./bin/cli.js",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
-    "./package.json": "./package.json",
     ".": {
       "source": "./src/index.ts",
       "types": "./build/index.d.ts",
       "default": "./build/index.js"
     },
-    "./plugin": {
-      "types": "./plugin/build/index.d.ts",
-      "default": "./plugin/build/index.js"
-    }
+    "./package.json": "./package.json",
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/index.js"
   },
   "sideEffects": false,
   "scripts": {

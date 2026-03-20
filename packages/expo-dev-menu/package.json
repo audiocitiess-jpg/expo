@@ -5,16 +5,11 @@
   "main": "build/DevMenu.js",
   "types": "build/DevMenu.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
+    ".": "./build/DevMenu.js",
     "./package.json": "./package.json",
-    ".": {
-      "types": "./build/DevMenu.d.ts",
-      "default": "./build/DevMenu.js"
-    },
-    "./plugin": {
-      "types": "./plugin/build/withDevMenu.d.ts",
-      "default": "./plugin/build/withDevMenu.js"
-    }
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/withDevMenu.js"
   },
   "sideEffects": false,
   "scripts": {

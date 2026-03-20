@@ -18,18 +18,15 @@
     "expo-module": "expo-module"
   },
   "exports": {
-    "./app.plugin": "./app.plugin.js",
-    "./app.plugin.js": "./app.plugin.js",
-    "./package.json": "./package.json",
-    "./build/server": "./build/server.js",
     ".": {
       "react-server": "./build/index.server.js",
       "default": "./build/index.js"
     },
-    "./plugin": {
-      "types": "./plugin/build/withFonts.d.ts",
-      "default": "./plugin/build/withFonts.js"
-    }
+    "./package.json": "./package.json",
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./build/server": "./build/server.js",
+    "./plugin": "./plugin/build/withFonts.js"
   },
   "keywords": [
     "react-native",

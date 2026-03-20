@@ -5,16 +5,11 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
+    ".": "./build/index.js",
     "./package.json": "./package.json",
-    ".": {
-      "types": "./build/index.d.ts",
-      "default": "./build/index.js"
-    },
-    "./plugin": {
-      "types": "./plugin/build/withUpdates.d.ts",
-      "default": "./plugin/build/withUpdates.js"
-    }
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/withUpdates.js"
   },
   "sideEffects": false,
   "bin": {

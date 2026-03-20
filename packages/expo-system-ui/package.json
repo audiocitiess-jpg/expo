@@ -5,16 +5,11 @@
   "main": "build/SystemUI.js",
   "types": "build/SystemUI.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
+    ".": "./build/SystemUI.js",
     "./package.json": "./package.json",
-    ".": {
-      "types": "./build/SystemUI.d.ts",
-      "default": "./build/SystemUI.js"
-    },
-    "./plugin": {
-      "types": "./plugin/build/withSystemUI.d.ts",
-      "default": "./plugin/build/withSystemUI.js"
-    }
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/withSystemUI.js"
   },
   "scripts": {
     "build": "expo-module build",

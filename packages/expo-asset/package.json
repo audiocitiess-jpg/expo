@@ -24,18 +24,15 @@
     "asset"
   ],
   "exports": {
-    "./app.plugin": "./app.plugin.js",
-    "./app.plugin.js": "./app.plugin.js",
-    "./tools/hashAssetFiles": "./tools/hashAssetFiles.js",
-    "./package.json": "./package.json",
     ".": {
       "react-server": "./build/index.server.js",
       "default": "./build/index.js"
     },
-    "./plugin": {
-      "types": "./plugin/build/withAssets.d.ts",
-      "default": "./plugin/build/withAssets.js"
-    }
+    "./package.json": "./package.json",
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./tools/hashAssetFiles": "./tools/hashAssetFiles.js",
+    "./plugin": "./plugin/build/withAssets.js"
   },
   "repository": {
     "type": "git",

@@ -5,16 +5,11 @@
   "main": "build/BackgroundFetch.js",
   "types": "build/BackgroundFetch.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
+    ".": "./build/BackgroundFetch.js",
     "./package.json": "./package.json",
-    ".": {
-      "types": "./build/BackgroundFetch.d.ts",
-      "default": "./build/BackgroundFetch.js"
-    },
-    "./plugin": {
-      "types": "./plugin/build/withBackgroundFetch.d.ts",
-      "default": "./plugin/build/withBackgroundFetch.js"
-    }
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/withBackgroundFetch.js"
   },
   "sideEffects": false,
   "scripts": {

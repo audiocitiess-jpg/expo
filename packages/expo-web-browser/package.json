@@ -5,16 +5,11 @@
   "main": "build/WebBrowser.js",
   "types": "build/WebBrowser.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
+    ".": "./build/WebBrowser.js",
     "./package.json": "./package.json",
-    ".": {
-      "types": "./build/WebBrowser.d.ts",
-      "default": "./build/WebBrowser.js"
-    },
-    "./plugin": {
-      "types": "./plugin/build/withWebBrowser.d.ts",
-      "default": "./plugin/build/withWebBrowser.js"
-    }
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/withWebBrowser.js"
   },
   "sideEffects": false,
   "scripts": {

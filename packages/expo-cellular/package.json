@@ -5,16 +5,11 @@
   "main": "build/Cellular.js",
   "types": "build/Cellular.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
+    ".": "./build/Cellular.js",
     "./package.json": "./package.json",
-    ".": {
-      "types": "./build/Cellular.d.ts",
-      "default": "./build/Cellular.js"
-    },
-    "./plugin": {
-      "types": "./plugin/build/withCellular.d.ts",
-      "default": "./plugin/build/withCellular.js"
-    }
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/withCellular.js"
   },
   "scripts": {
     "build": "expo-module build",

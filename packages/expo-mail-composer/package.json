@@ -5,16 +5,11 @@
   "main": "build/MailComposer.js",
   "types": "build/MailComposer.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
+    ".": "./build/MailComposer.js",
     "./package.json": "./package.json",
-    ".": {
-      "types": "./build/MailComposer.d.ts",
-      "default": "./build/MailComposer.js"
-    },
-    "./plugin": {
-      "types": "./plugin/build/withMailComposer.d.ts",
-      "default": "./plugin/build/withMailComposer.js"
-    }
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/withMailComposer.js"
   },
   "sideEffects": false,
   "scripts": {

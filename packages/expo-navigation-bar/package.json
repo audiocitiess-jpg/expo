@@ -5,16 +5,14 @@
   "main": "src/index.ts",
   "types": "build/index.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
-    "./package.json": "./package.json",
     ".": {
       "types": "./build/index.d.ts",
       "default": "./src/index.ts"
     },
-    "./plugin": {
-      "types": "./plugin/build/withNavigationBar.d.ts",
-      "default": "./plugin/build/withNavigationBar.js"
-    }
+    "./package.json": "./package.json",
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/withNavigationBar.js"
   },
   "scripts": {
     "build": "expo-module build",

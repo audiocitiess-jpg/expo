@@ -5,16 +5,11 @@
   "main": "build/TaskManager.js",
   "types": "build/TaskManager.d.ts",
   "exports": {
-    "./app.plugin.js": "./app.plugin.js",
+    ".": "./build/TaskManager.js",
     "./package.json": "./package.json",
-    ".": {
-      "types": "./build/TaskManager.d.ts",
-      "default": "./build/TaskManager.js"
-    },
-    "./plugin": {
-      "types": "./plugin/build/withTaskManager.d.ts",
-      "default": "./plugin/build/withTaskManager.js"
-    }
+    "./app.plugin": "./app.plugin.js",
+    "./app.plugin.js": "./app.plugin.js",
+    "./plugin": "./plugin/build/withTaskManager.js"
   },
   "sideEffects": false,
   "scripts": {
