@@ -927,6 +927,7 @@ export async function withMetroMultiPlatformAsync(
   // NOTE(@kitten): This is now always active and EXPO_USE_METRO_REQUIRE / isNamedRequiresEnabled is disregarded
   const metroDefaults: typeof import('@expo/metro/metro-config/defaults/defaults') = require('@expo/metro/metro-config/defaults/defaults');
   const metroRequirePolyfill = require.resolve('@expo/cli/build/metro-require/require');
+  const metroOriginalModuleSystem = metroDefaults.moduleSystem;
   asWritable(metroDefaults).moduleSystem = require.resolve('@expo/cli/build/metro-require/require');
   watchFolders.push(path.dirname(metroRequirePolyfill));
 
@@ -941,7 +942,7 @@ export async function withMetroMultiPlatformAsync(
       ...resolveWatchFolders('react-native', { deep: false }),
       ...resolveWatchFolders('@expo/metro', { deep: true }),
       ...resolveWatchFolders('@expo/metro-runtime', { deep: true }),
-      ...[config.resolver.emptyModulePath, ...reactNativePolyfills]
+      ...[config.resolver.emptyModulePath, metroOriginalModuleSystem, ...reactNativePolyfills]
         .map((targetPath) => (fs.existsSync(targetPath) ? path.dirname(targetPath) : null))
         .filter((targetPath) => targetPath != null)
     );
