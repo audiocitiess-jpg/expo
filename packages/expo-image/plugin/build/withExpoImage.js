@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.plugin = void 0;
 const config_plugins_1 = require("expo/config-plugins");
 const pkg = require('../../package.json');
 const withExpoImage = (config, props) => {
@@ -9,4 +10,5 @@ const withExpoImage = (config, props) => {
         return config;
     });
 };
-exports.default = (0, config_plugins_1.createRunOncePlugin)(withExpoImage, pkg.name, pkg.version);
+exports.plugin = (0, config_plugins_1.createRunOncePlugin)(withExpoImage, pkg.name, pkg.version);
+exports.default = (props = {}) => [pkg.name, props];

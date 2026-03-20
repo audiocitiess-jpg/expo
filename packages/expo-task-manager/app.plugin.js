@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withTaskManager');
+const { plugin } = require('./plugin/build/withTaskManager');
+module.exports = plugin;

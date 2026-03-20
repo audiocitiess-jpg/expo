@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withStatusBar');
+const { plugin } = require('./plugin/build/withStatusBar');
+module.exports = plugin;

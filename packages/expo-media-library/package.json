@@ -4,6 +4,19 @@
   "description": "Provides access to user's media library.",
   "main": "build/MediaLibrary.js",
   "types": "build/MediaLibrary.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/MediaLibrary.d.ts",
+      "default": "./build/MediaLibrary.js"
+    },
+    "./plugin": {
+      "types": "./plugin/build/withMediaLibrary.d.ts",
+      "default": "./plugin/build/withMediaLibrary.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*.js",
+    "./*.js": "./*.js"
+  },
   "sideEffects": false,
   "scripts": {
     "build": "expo-module build",

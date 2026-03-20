@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withUpdates')
+const { plugin } = require('./plugin/build/withUpdates');
+module.exports = plugin;

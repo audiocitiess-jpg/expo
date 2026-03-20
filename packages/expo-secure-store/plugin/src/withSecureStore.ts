@@ -12,12 +12,15 @@ const BACKUP_RULES_PATH = '@xml/secure_store_backup_rules';
 const EXTRACTION_RULES_PATH = '@xml/secure_store_data_extraction_rules';
 const FACEID_USAGE = 'Allow $(PRODUCT_NAME) to access your Face ID biometric data.';
 
-const withSecureStore: ConfigPlugin<
-  {
-    faceIDPermission?: string | false;
-    configureAndroidBackup?: boolean;
-  } | void
-> = (config, { faceIDPermission, configureAndroidBackup = true } = {}) => {
+type Props = {
+  faceIDPermission?: string | false;
+  configureAndroidBackup?: boolean;
+};
+
+const withSecureStore: ConfigPlugin<Props | void> = (
+  config,
+  { faceIDPermission, configureAndroidBackup = true } = {}
+) => {
   IOSConfig.Permissions.createPermissionsPlugin({
     NSFaceIDUsageDescription: FACEID_USAGE,
   })(config, {
@@ -55,4 +58,6 @@ const withSecureStore: ConfigPlugin<
   return config;
 };
 
-export default createRunOncePlugin(withSecureStore, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withSecureStore, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

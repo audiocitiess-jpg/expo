@@ -1,5 +1,5 @@
 import { AndroidConfig, ConfigPlugin } from 'expo/config-plugins';
-import { NotificationsPluginProps } from './withNotifications';
+import { Props } from './withNotifications';
 type DPIString = 'mdpi' | 'hdpi' | 'xhdpi' | 'xxhdpi' | 'xxxhdpi';
 type dpiMap = Record<DPIString, {
     folderName: string;
@@ -39,5 +39,5 @@ export declare function setNotificationIconAsync(projectRoot: string, icon: stri
  * Save sound files to `<project-root>/android/app/src/main/res/raw`
  */
 export declare function setNotificationSounds(projectRoot: string, sounds: string[]): void;
-export declare const withNotificationsAndroid: ConfigPlugin<NotificationsPluginProps>;
+export declare const withNotificationsAndroid: ConfigPlugin<Props>;
 export {};

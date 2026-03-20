@@ -4,6 +4,19 @@
   "description": "Expo Development Client",
   "main": "build/DevClient.js",
   "types": "build/DevClient.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/DevClient.d.ts",
+      "default": "./build/DevClient.js"
+    },
+    "./plugin": {
+      "types": "./plugin/build/withDevClient.d.ts",
+      "default": "./plugin/build/withDevClient.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*.js",
+    "./*.js": "./*.js"
+  },
   "scripts": {
     "build": "expo-module build",
     "clean": "expo-module clean",

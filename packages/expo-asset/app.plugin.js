@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withAssets');
+const { plugin } = require('./plugin/build/withAssets');
+module.exports = plugin;

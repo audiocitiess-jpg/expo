@@ -8,6 +8,7 @@
     "./localStorage/install.js"
   ],
   "exports": {
+    "./app.plugin.js": "./app.plugin.js",
     "./package.json": "./package.json",
     ".": {
       "default": "./build/index.js",
@@ -20,7 +21,10 @@
     "./localStorage/install": {
       "default": "./localStorage/install.js"
     },
-    "./app.plugin.js": "./app.plugin.js"
+    "./plugin": {
+      "types": "./plugin/build/withSQLite.d.ts",
+      "default": "./plugin/build/withSQLite.js"
+    }
   },
   "scripts": {
     "build": "expo-module build",

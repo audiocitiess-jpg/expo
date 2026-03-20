@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withBackgroundTask');
+const { plugin } = require('./plugin/build/withBackgroundTask');
+module.exports = plugin;

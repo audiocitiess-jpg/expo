@@ -143,4 +143,6 @@ const withStatusBar: ConfigPlugin<Props | undefined> = (config, props) => {
   return withStatusBarExpoGoManifest(config, props);
 };
 
-export default createRunOncePlugin(withStatusBar, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withStatusBar, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

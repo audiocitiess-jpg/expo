@@ -4,8 +4,22 @@
   "description": "Expo Router is a file-based router for React Native and web applications.",
   "author": "650 Industries, Inc.",
   "license": "MIT",
-  "main": "build/index",
+  "main": "build/index.js",
   "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    },
+    "./plugin": {
+      "types": "./plugin/build/index.d.ts",
+      "default": "./plugin/build/index.js"
+    },
+    "./assets/*": "./assets/*",
+    "./package.json": "./package.json",
+    "./*": "./*.js",
+    "./*.js": "./*.js"
+  },
   "sideEffects": [
     "rsc/entry.js",
     "entry-classic.js",

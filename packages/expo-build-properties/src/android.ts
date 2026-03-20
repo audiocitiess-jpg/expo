@@ -12,11 +12,11 @@ import path from 'path';
 
 import { renderQueryIntents, renderQueryPackages, renderQueryProviders } from './androidQueryUtils';
 import { appendContents, purgeContents } from './fileContentsUtils';
-import { PluginConfigType, resolveConfigValue } from './pluginConfig';
+import { Props, resolveConfigValue } from './pluginConfig';
 
 const { createBuildGradlePropsConfigPlugin } = AndroidConfig.BuildProperties;
 
-export const withAndroidBuildProperties = createBuildGradlePropsConfigPlugin<PluginConfigType>(
+export const withAndroidBuildProperties = createBuildGradlePropsConfigPlugin<Props>(
   [
     {
       propName: 'android.minSdkVersion',
@@ -117,7 +117,7 @@ export const withAndroidBuildProperties = createBuildGradlePropsConfigPlugin<Plu
 /**
  * Appends `props.android.extraProguardRules` content into `android/app/proguard-rules.pro`
  */
-export const withAndroidProguardRules: ConfigPlugin<PluginConfigType> = (config, props) => {
+export const withAndroidProguardRules: ConfigPlugin<Props> = (config, props) => {
   return withDangerousMod(config, [
     'android',
     async (config) => {
@@ -216,7 +216,7 @@ export function updateAndroidProguardRules(
   return newContents;
 }
 
-export const withAndroidCleartextTraffic: ConfigPlugin<PluginConfigType> = (config, props) => {
+export const withAndroidCleartextTraffic: ConfigPlugin<Props> = (config, props) => {
   return withAndroidManifest(config, (config) => {
     if (props.android?.usesCleartextTraffic == null) {
       return config;
@@ -246,7 +246,7 @@ function setUsesCleartextTraffic(
   return androidManifest;
 }
 
-export const withAndroidQueries: ConfigPlugin<PluginConfigType> = (config, props) => {
+export const withAndroidQueries: ConfigPlugin<Props> = (config, props) => {
   return withAndroidManifest(config, (config) => {
     if (props.android?.manifestQueries == null) {
       return config;
@@ -273,7 +273,7 @@ export const withAndroidQueries: ConfigPlugin<PluginConfigType> = (config, props
   });
 };
 
-export const withAndroidDayNightTheme: ConfigPlugin<PluginConfigType> = (config, props) => {
+export const withAndroidDayNightTheme: ConfigPlugin<Props> = (config, props) => {
   return withAndroidStyles(config, (config) => {
     if (!props.android?.useDayNightTheme) {
       return config;
@@ -304,7 +304,7 @@ export const withAndroidDayNightTheme: ConfigPlugin<PluginConfigType> = (config,
   });
 };
 
-export const withAndroidSettingsGradle: ConfigPlugin<PluginConfigType> = (config, props) => {
+export const withAndroidSettingsGradle: ConfigPlugin<Props> = (config, props) => {
   return withSettingsGradle(config, (config) => {
     // Resolution order: android.buildReactNativeFromSource > top-level > deprecated android.buildFromSource
     const buildFromSource =

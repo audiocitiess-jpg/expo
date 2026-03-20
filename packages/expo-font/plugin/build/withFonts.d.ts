@@ -8,7 +8,7 @@ export type FontObject = {
     }[];
 };
 export type Font = string | FontObject;
-export type FontProps = {
+export type Props = {
     fonts?: string[];
     android?: {
         fonts?: Font[];
@@ -17,5 +17,6 @@ export type FontProps = {
         fonts?: string[];
     };
 };
-declare const _default: ConfigPlugin<FontProps>;
+export declare const plugin: ConfigPlugin<Props>;
+declare const _default: (props?: Props) => [string, Props];
 export default _default;

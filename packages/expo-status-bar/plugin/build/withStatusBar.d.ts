@@ -14,5 +14,6 @@ export declare const setIOSStatusBarInfoPlist: (plist: InfoPlist, { hidden, styl
  * of the static values that Expo Go reads from (`androidStatusBar`).
  */
 export declare const withStatusBarExpoGoManifest: ConfigPlugin<Props | undefined>;
-declare const _default: ConfigPlugin<Props | undefined>;
+export declare const plugin: ConfigPlugin<Props | undefined>;
+declare const _default: (props?: Props) => [string, Props];
 export default _default;

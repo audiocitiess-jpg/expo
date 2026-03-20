@@ -1,6 +1,7 @@
 import type { ExpoConfig } from 'expo/config';
 import {
   AndroidConfig,
+  ConfigPlugin,
   WarningAggregator,
   withAndroidManifest,
   withAppBuildGradle,
@@ -11,7 +12,9 @@ import {
 import fs from 'fs';
 import path from 'path';
 
-type ConfigPluginProps = {
+const pkg = require('expo-localization/package.json');
+
+type Props = {
   supportsRTL?: boolean;
   forcesRTL?: boolean;
   allowDynamicLocaleChangesAndroid?: boolean;
@@ -27,7 +30,7 @@ export function convertBcp47ToResourceQualifier(locale: string): string {
   return `b+${locale.replaceAll('-', '+')}`;
 }
 
-function withExpoLocalizationIos(config: ExpoConfig, data: ConfigPluginProps) {
+function withExpoLocalizationIos(config: ExpoConfig, data: Props) {
   const mergedConfig = { ...config.extra, ...data };
 
   const supportedLocales =
@@ -56,7 +59,7 @@ function withExpoLocalizationIos(config: ExpoConfig, data: ConfigPluginProps) {
   return config;
 }
 
-function withExpoLocalizationAndroid(config: ExpoConfig, data: ConfigPluginProps) {
+function withExpoLocalizationAndroid(config: ExpoConfig, data: Props) {
   if (data.allowDynamicLocaleChangesAndroid) {
     config = withAndroidManifest(config, (config) => {
       const mainActivity = AndroidConfig.Manifest.getMainActivityOrThrow(config.modResults);
@@ -155,7 +158,7 @@ function withExpoLocalizationAndroid(config: ExpoConfig, data: ConfigPluginProps
   });
 }
 
-function withExpoLocalization(config: ExpoConfig, data: ConfigPluginProps = {}) {
+export const plugin: ConfigPlugin<Props | undefined> = (config, data = {}) => {
   // Ensure allowDynamicLocaleChangesAndroid defaults to true
   const normalizedData = {
     ...data,
@@ -165,6 +168,6 @@ function withExpoLocalization(config: ExpoConfig, data: ConfigPluginProps = {}) 
     [withExpoLocalizationIos, normalizedData],
     [withExpoLocalizationAndroid, normalizedData],
   ]);
-}
+};
 
-export default withExpoLocalization;
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

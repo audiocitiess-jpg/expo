@@ -1,7 +1,6 @@
 import type { AndroidPluginProps } from './android';
 import type { IOSPluginProps } from './ios';
-export interface PluginPropsType {
+export type Props = {
     android?: AndroidPluginProps;
     ios?: IOSPluginProps;
-}
-export type PluginProps = PluginPropsType | undefined;
+};

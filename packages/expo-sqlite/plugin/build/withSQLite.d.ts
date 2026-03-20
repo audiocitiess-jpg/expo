@@ -5,7 +5,7 @@ interface Props {
     useSQLCipher?: boolean;
     useLibSQL?: boolean;
     withSQLiteVecExtension?: boolean;
-    android: {
+    android?: {
         customBuildFlags?: string;
         enableFTS?: boolean;
         useSQLCipher?: boolean;
@@ -13,7 +13,7 @@ interface Props {
         useSQLiteVec?: boolean;
         withSQLiteVecExtension?: boolean;
     };
-    ios: {
+    ios?: {
         customBuildFlags?: string;
         enableFTS?: boolean;
         useSQLCipher?: boolean;
@@ -21,5 +21,6 @@ interface Props {
         withSQLiteVecExtension?: boolean;
     };
 }
-declare const _default: ConfigPlugin<Props>;
+export declare const plugin: ConfigPlugin<Props>;
+declare const _default: (props?: Props) => [string, Props];
 export default _default;

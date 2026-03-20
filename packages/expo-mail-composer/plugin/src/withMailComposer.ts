@@ -39,4 +39,6 @@ const withMailComposer: ConfigPlugin = (config) => {
   });
 };
 
-export default createRunOncePlugin(withMailComposer, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withMailComposer, pkg.name, pkg.version);
+
+export default (): string => pkg.name;

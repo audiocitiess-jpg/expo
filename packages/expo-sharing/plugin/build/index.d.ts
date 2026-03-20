@@ -1,4 +1,5 @@
 import { ConfigPlugin } from '@expo/config-plugins';
-import { ShareExtensionConfigPluginProps } from './sharingPlugin.types';
-declare const _default: ConfigPlugin<ShareExtensionConfigPluginProps>;
+import { Props } from './sharingPlugin.types';
+export declare const plugin: ConfigPlugin<Props>;
+declare const _default: (props?: Props) => [string, Props];
 export default _default;

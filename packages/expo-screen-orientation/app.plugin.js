@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withScreenOrientation');
+const { plugin } = require('./plugin/build/withScreenOrientation');
+module.exports = plugin;

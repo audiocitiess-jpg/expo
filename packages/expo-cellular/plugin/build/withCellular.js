@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.plugin = void 0;
 const config_plugins_1 = require("expo/config-plugins");
 const pkg = require('expo-cellular/package.json');
 const withCellular = (config) => {
@@ -9,4 +10,5 @@ const withCellular = (config) => {
     ]);
     return config;
 };
-exports.default = (0, config_plugins_1.createRunOncePlugin)(withCellular, pkg.name, pkg.version);
+exports.plugin = (0, config_plugins_1.createRunOncePlugin)(withCellular, pkg.name, pkg.version);
+exports.default = () => pkg.name;

@@ -36,5 +36,6 @@ export declare const withAndroidNavigationBarExpoGoManifest: ConfigPlugin<Resolv
 export declare function setStrings(strings: AndroidConfig.Resources.ResourceXML, { hidden }: ResolvedProps): AndroidConfig.Resources.ResourceXML;
 export declare function setNavigationBarStyles({ style }: ResolvedProps, styles: AndroidConfig.Resources.ResourceXML): AndroidConfig.Resources.ResourceXML;
 export declare function applyEnforceNavigationBarContrast(config: ResourceXMLConfig, enforceNavigationBarContrast: boolean): ResourceXMLConfig;
-declare const _default: ConfigPlugin<void | Props>;
+export declare const plugin: ConfigPlugin<void | Props>;
+declare const _default: (props?: Props) => [string, Props];
 export default _default;

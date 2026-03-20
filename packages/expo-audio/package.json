@@ -5,6 +5,19 @@
   "description": "A cross-platform audio library for React Native and Expo apps.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    },
+    "./plugin": {
+      "types": "./plugin/build/withAudio.d.ts",
+      "default": "./plugin/build/withAudio.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*.js",
+    "./*.js": "./*.js"
+  },
   "sideEffects": false,
   "scripts": {
     "build": "expo-module build",

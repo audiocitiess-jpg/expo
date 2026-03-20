@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withSecureStore');
+const { plugin } = require('./plugin/build/withSecureStore');
+module.exports = plugin;

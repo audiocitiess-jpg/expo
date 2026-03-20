@@ -1,5 +1,5 @@
 import { ConfigPlugin } from 'expo/config-plugins';
-export type PluginConfig = {
+export type Props = {
     experimentalLauncherActivity?: boolean;
 };
 export declare const withWebBrowserAndroid: ConfigPlugin;

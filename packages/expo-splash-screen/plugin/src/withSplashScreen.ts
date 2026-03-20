@@ -6,8 +6,8 @@ import { ConfigPlugin, createRunOncePlugin } from 'expo/config-plugins';
 
 const pkg = require('expo-splash-screen/package.json');
 
-type PluginConfig = {
-  backgroundColor: string;
+type Props = {
+  backgroundColor?: string;
   imageWidth?: number;
   enableFullScreenImage_legacy?: boolean;
   image?: string;
@@ -20,13 +20,13 @@ type PluginConfig = {
   ios?: IOSSplashConfig;
 };
 
-const withSplashScreen: ConfigPlugin<PluginConfig | null> = (config, props) => {
+const withSplashScreen: ConfigPlugin<Props | null> = (config, props) => {
   let android: AndroidSplashConfig | null = null;
   let ios: IOSSplashConfig | null = null;
 
   const resizeMode = props?.resizeMode || 'contain';
 
-  const { ios: iosProps, android: androidProps, ...otherProps } = props ?? ({} as PluginConfig);
+  const { ios: iosProps, android: androidProps, ...otherProps } = props ?? ({} as Props);
 
   const usesLegacySplashConfigIOS =
     !props || (androidProps && !iosProps && Object.keys(otherProps).length === 0);
@@ -63,4 +63,6 @@ const withSplashScreen: ConfigPlugin<PluginConfig | null> = (config, props) => {
   return config;
 };
 
-export default createRunOncePlugin(withSplashScreen, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withSplashScreen, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

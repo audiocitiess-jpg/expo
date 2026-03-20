@@ -4,6 +4,19 @@
   "description": "Expo universal module for BackgroundFetch API",
   "main": "build/BackgroundFetch.js",
   "types": "build/BackgroundFetch.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/BackgroundFetch.d.ts",
+      "default": "./build/BackgroundFetch.js"
+    },
+    "./plugin": {
+      "types": "./plugin/build/withBackgroundFetch.d.ts",
+      "default": "./plugin/build/withBackgroundFetch.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*.js",
+    "./*.js": "./*.js"
+  },
   "sideEffects": false,
   "scripts": {
     "build": "expo-module build",

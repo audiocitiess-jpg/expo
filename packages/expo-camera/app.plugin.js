@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withCamera');
+const { plugin } = require('./plugin/build/withCamera');
+module.exports = plugin;

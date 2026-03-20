@@ -1,19 +1,15 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.plugin = void 0;
 const config_plugins_1 = require("expo/config-plugins");
-// @ts-expect-error missing types
-const app_plugin_1 = __importDefault(require("expo-dev-launcher/app.plugin"));
-// @ts-expect-error missing types
-const app_plugin_2 = __importDefault(require("expo-dev-menu/app.plugin"));
+const plugin_1 = require("expo-dev-launcher/plugin");
+const plugin_2 = require("expo-dev-menu/plugin");
 const withGeneratedAndroidScheme_1 = require("./withGeneratedAndroidScheme");
 const withGeneratedIosScheme_1 = require("./withGeneratedIosScheme");
 const pkg = require('expo-dev-client/package.json');
 function withDevClient(config, props) {
-    config = (0, app_plugin_2.default)(config);
-    config = (0, app_plugin_1.default)(config, props);
+    config = (0, plugin_2.plugin)(config);
+    config = (0, plugin_1.plugin)(config, props);
     const mySchemeProps = { addGeneratedScheme: true, ...props };
     if (mySchemeProps.addGeneratedScheme) {
         config = (0, withGeneratedAndroidScheme_1.withGeneratedAndroidScheme)(config);
@@ -21,4 +17,5 @@ function withDevClient(config, props) {
     }
     return config;
 }
-exports.default = (0, config_plugins_1.createRunOncePlugin)(withDevClient, pkg.name, pkg.version);
+exports.plugin = (0, config_plugins_1.createRunOncePlugin)(withDevClient, pkg.name, pkg.version);
+exports.default = (props = {}) => [pkg.name, props];

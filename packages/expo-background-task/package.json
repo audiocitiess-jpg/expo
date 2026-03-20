@@ -4,6 +4,19 @@
   "description": "Expo Android and iOS module for Background Task APIs",
   "main": "build/BackgroundTask.js",
   "types": "build/BackgroundTask.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/BackgroundTask.d.ts",
+      "default": "./build/BackgroundTask.js"
+    },
+    "./plugin": {
+      "types": "./plugin/build/withBackgroundTask.d.ts",
+      "default": "./plugin/build/withBackgroundTask.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*.js",
+    "./*.js": "./*.js"
+  },
   "sideEffects": false,
   "scripts": {
     "build": "expo-module build",

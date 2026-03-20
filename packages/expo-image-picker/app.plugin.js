@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withImagePicker');
+const { plugin } = require('./plugin/build/withImagePicker');
+module.exports = plugin;

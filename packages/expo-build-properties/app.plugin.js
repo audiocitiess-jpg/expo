@@ -1,1 +1,2 @@
-module.exports = require('./build/withBuildProperties');
+const { plugin } = require('./build/withBuildProperties');
+module.exports = plugin;

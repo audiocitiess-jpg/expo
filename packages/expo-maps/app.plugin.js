@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withMapsLocation');
+const { plugin } = require('./plugin/build/withMapsLocation');
+module.exports = plugin;

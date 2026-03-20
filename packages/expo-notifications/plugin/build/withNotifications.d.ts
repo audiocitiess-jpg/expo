@@ -1,5 +1,5 @@
 import { ConfigPlugin } from 'expo/config-plugins';
-export type NotificationsPluginProps = {
+export type Props = {
     /**
      * Local path to an image to use as the icon for push notifications.
      * 96x96 all-white png with transparency. We recommend following
@@ -37,5 +37,6 @@ export type NotificationsPluginProps = {
      */
     enableBackgroundRemoteNotifications?: boolean;
 };
-declare const _default: ConfigPlugin<void | NotificationsPluginProps>;
+export declare const plugin: ConfigPlugin<void | Props>;
+declare const _default: (props?: Props) => [string, Props];
 export default _default;

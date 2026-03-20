@@ -7,7 +7,7 @@ import {
   type ConfigPlugin,
 } from 'expo/config-plugins';
 
-import { PluginConfigType, validateConfig } from './pluginConfig';
+import { Props, validateConfig } from './pluginConfig';
 
 const pkg = require('expo-dev-launcher/package.json');
 
@@ -114,7 +114,9 @@ const withLocalNetworkPermission: ConfigPlugin = (config) => {
   });
 };
 
-export default createRunOncePlugin<PluginConfigType>(
+export type { Props };
+
+export const plugin = createRunOncePlugin<Props>(
   (config, props = {}) => {
     validateConfig(props);
 
@@ -156,3 +158,5 @@ export default createRunOncePlugin<PluginConfigType>(
   pkg.name,
   pkg.version
 );
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

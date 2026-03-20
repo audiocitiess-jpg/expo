@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withLocalAuthentication');
+const { plugin } = require('./plugin/build/withLocalAuthentication');
+module.exports = plugin;

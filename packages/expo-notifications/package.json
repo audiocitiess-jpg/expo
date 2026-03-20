@@ -4,6 +4,19 @@
   "description": "Provides an API to fetch push notification tokens and to present, schedule, receive, and respond to notifications.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    },
+    "./plugin": {
+      "types": "./plugin/build/withNotifications.d.ts",
+      "default": "./plugin/build/withNotifications.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*.js",
+    "./*.js": "./*.js"
+  },
   "sideEffects": [
     "./build/DevicePushTokenAutoRegistration.fx.js"
   ],

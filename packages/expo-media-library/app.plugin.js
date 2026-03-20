@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withMediaLibrary');
+const { plugin } = require('./plugin/build/withMediaLibrary');
+module.exports = plugin;

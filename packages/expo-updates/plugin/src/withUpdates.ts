@@ -10,4 +10,6 @@ const withUpdates: ConfigPlugin = (config) => {
   return config;
 };
 
-export default createRunOncePlugin(withUpdates, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withUpdates, pkg.name, pkg.version);
+
+export default (): string => pkg.name;

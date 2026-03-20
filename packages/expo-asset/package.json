@@ -31,6 +31,10 @@
     ".": {
       "react-server": "./build/index.server.js",
       "default": "./build/index.js"
+    },
+    "./plugin": {
+      "types": "./plugin/build/withAssets.d.ts",
+      "default": "./plugin/build/withAssets.js"
     }
   },
   "repository": {

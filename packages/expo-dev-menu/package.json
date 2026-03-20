@@ -4,6 +4,19 @@
   "description": "Expo/React Native module with the developer menu.",
   "main": "build/DevMenu.js",
   "types": "build/DevMenu.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/DevMenu.d.ts",
+      "default": "./build/DevMenu.js"
+    },
+    "./plugin": {
+      "types": "./plugin/build/withDevMenu.d.ts",
+      "default": "./plugin/build/withDevMenu.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*.js",
+    "./*.js": "./*.js"
+  },
   "sideEffects": false,
   "scripts": {
     "build": "expo-module build",

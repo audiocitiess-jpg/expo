@@ -4,6 +4,19 @@
   "description": "Provides access to the system's UI for selecting images and videos from the phone's library or taking a photo with the camera.",
   "main": "build/ImagePicker.js",
   "types": "build/ImagePicker.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/ImagePicker.d.ts",
+      "default": "./build/ImagePicker.js"
+    },
+    "./plugin": {
+      "types": "./plugin/build/withImagePicker.d.ts",
+      "default": "./plugin/build/withImagePicker.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*.js",
+    "./*.js": "./*.js"
+  },
   "sideEffects": false,
   "scripts": {
     "build": "expo-module build",

@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withNavigationBar');
+const { plugin } = require('./plugin/build/withNavigationBar');
+module.exports = plugin;

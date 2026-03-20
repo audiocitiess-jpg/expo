@@ -16,4 +16,6 @@ const withExpoImage: ConfigPlugin<Props | void> = (config, props) => {
   });
 };
 
-export default createRunOncePlugin(withExpoImage, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withExpoImage, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

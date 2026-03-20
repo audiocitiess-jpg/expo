@@ -5,6 +5,19 @@
   "description": "A cross-platform, performant image component for React Native and Expo with Web support",
   "main": "src/index.ts",
   "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./src/index.ts"
+    },
+    "./plugin": {
+      "types": "./plugin/build/withExpoImage.d.ts",
+      "default": "./plugin/build/withExpoImage.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*.js",
+    "./*.js": "./*.js"
+  },
   "sideEffects": false,
   "scripts": {
     "build": "expo-module build",

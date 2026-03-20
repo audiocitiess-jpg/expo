@@ -16,4 +16,6 @@ const withSystemUI: ConfigPlugin = (config) => {
   ]);
 };
 
-export default createRunOncePlugin(withSystemUI, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withSystemUI, pkg.name, pkg.version);
+
+export default (): string => pkg.name;

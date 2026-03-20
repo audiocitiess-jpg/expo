@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withCalendar');
+const { plugin } = require('./plugin/build/withCalendar');
+module.exports = plugin;

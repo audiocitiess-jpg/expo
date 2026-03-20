@@ -36,11 +36,11 @@ export interface SharedBuildConfigFields {
  * Resolves a shared config value with platform-specific override.
  * Platform-specific values take precedence over top-level values.
  */
-export declare function resolveConfigValue<K extends keyof SharedBuildConfigFields>(config: PluginConfigType, platform: 'android' | 'ios', key: K): SharedBuildConfigFields[K];
+export declare function resolveConfigValue<K extends keyof SharedBuildConfigFields>(config: Props, platform: 'android' | 'ios', key: K): SharedBuildConfigFields[K];
 /**
  * Interface representing base build properties configuration.
  */
-export interface PluginConfigType extends SharedBuildConfigFields {
+export interface Props extends SharedBuildConfigFields {
     /**
      * Interface representing available configuration for Android native build properties.
      * @platform android
@@ -530,4 +530,4 @@ export interface PluginConfigTypeAndroidQueriesData {
 /**
  * @ignore
  */
-export declare function validateConfig(config: unknown, projectRoot?: string): PluginConfigType;
+export declare function validateConfig(config: unknown, projectRoot?: string): Props;

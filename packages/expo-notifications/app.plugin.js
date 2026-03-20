@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withNotifications');
+const { plugin } = require('./plugin/build/withNotifications');
+module.exports = plugin;

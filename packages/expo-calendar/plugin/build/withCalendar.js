@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.plugin = void 0;
 const config_plugins_1 = require("expo/config-plugins");
 const pkg = require('expo-calendar/package.json');
 const CALENDARS_USAGE = 'Allow $(PRODUCT_NAME) to access your calendars';
@@ -21,4 +22,5 @@ const withCalendar = (config, { calendarPermission, remindersPermission } = {}) 
         'android.permission.WRITE_CALENDAR',
     ]);
 };
-exports.default = (0, config_plugins_1.createRunOncePlugin)(withCalendar, pkg.name, pkg.version);
+exports.plugin = (0, config_plugins_1.createRunOncePlugin)(withCalendar, pkg.name, pkg.version);
+exports.default = (props = {}) => [pkg.name, props];

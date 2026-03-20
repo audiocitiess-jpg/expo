@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.plugin = void 0;
 const config_plugins_1 = require("expo/config-plugins");
 const withAssetsAndroid_1 = require("./withAssetsAndroid");
 const withAssetsIos_1 = require("./withAssetsIos");
@@ -15,4 +16,5 @@ const withAssets = (config, props) => {
     config = (0, withAssetsAndroid_1.withAssetsAndroid)(config, props.assets ?? []);
     return config;
 };
-exports.default = (0, config_plugins_1.createRunOncePlugin)(withAssets, pkg.name, pkg.version);
+exports.plugin = (0, config_plugins_1.createRunOncePlugin)(withAssets, pkg.name, pkg.version);
+exports.default = (props = {}) => [pkg.name, props];

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.plugin = void 0;
 const config_plugins_1 = require("expo/config-plugins");
 const withAndroidRootViewBackgroundColor_1 = require("./withAndroidRootViewBackgroundColor");
 const withAndroidUserInterfaceStyle_1 = require("./withAndroidUserInterfaceStyle");
@@ -14,4 +15,5 @@ const withSystemUI = (config) => {
         withIosUserInterfaceStyle_1.withIosUserInterfaceStyle,
     ]);
 };
-exports.default = (0, config_plugins_1.createRunOncePlugin)(withSystemUI, pkg.name, pkg.version);
+exports.plugin = (0, config_plugins_1.createRunOncePlugin)(withSystemUI, pkg.name, pkg.version);
+exports.default = () => pkg.name;

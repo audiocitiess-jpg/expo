@@ -8,10 +8,11 @@ import {
 const pkg = require('expo-sensors/package.json');
 const MOTION_USAGE = 'Allow $(PRODUCT_NAME) to access your device motion';
 
-const withSensors: ConfigPlugin<{ motionPermission?: string | false } | void> = (
-  config,
-  { motionPermission } = {}
-) => {
+type Props = {
+  motionPermission?: string | false;
+};
+
+const withSensors: ConfigPlugin<Props | void> = (config, { motionPermission } = {}) => {
   if (motionPermission === false) {
     config = withPodfileProperties(config, (config) => {
       config.modResults.MOTION_PERMISSION = 'false';
@@ -26,4 +27,6 @@ const withSensors: ConfigPlugin<{ motionPermission?: string | false } | void> = 
   });
 };
 
-export default createRunOncePlugin(withSensors, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withSensors, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

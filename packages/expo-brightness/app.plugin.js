@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withBrightness');
+const { plugin } = require('./plugin/build/withBrightness');
+module.exports = plugin;

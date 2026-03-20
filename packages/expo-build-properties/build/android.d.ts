@@ -1,10 +1,10 @@
 import { ConfigPlugin } from 'expo/config-plugins';
-import { PluginConfigType } from './pluginConfig';
-export declare const withAndroidBuildProperties: ConfigPlugin<PluginConfigType>;
+import { Props } from './pluginConfig';
+export declare const withAndroidBuildProperties: ConfigPlugin<Props>;
 /**
  * Appends `props.android.extraProguardRules` content into `android/app/proguard-rules.pro`
  */
-export declare const withAndroidProguardRules: ConfigPlugin<PluginConfigType>;
+export declare const withAndroidProguardRules: ConfigPlugin<Props>;
 /**
  * Purge generated proguard contents from previous prebuild.
  * This plugin only runs once in the prebuilding phase and should execute before any `withAndroidProguardRules` calls.
@@ -18,10 +18,10 @@ export declare const withAndroidPurgeProguardRulesOnce: ConfigPlugin;
  * @returns return updated contents
  */
 export declare function updateAndroidProguardRules(contents: string, newProguardRules: string | null, updateMode: 'append' | 'overwrite'): string;
-export declare const withAndroidCleartextTraffic: ConfigPlugin<PluginConfigType>;
-export declare const withAndroidQueries: ConfigPlugin<PluginConfigType>;
-export declare const withAndroidDayNightTheme: ConfigPlugin<PluginConfigType>;
-export declare const withAndroidSettingsGradle: ConfigPlugin<PluginConfigType>;
+export declare const withAndroidCleartextTraffic: ConfigPlugin<Props>;
+export declare const withAndroidQueries: ConfigPlugin<Props>;
+export declare const withAndroidDayNightTheme: ConfigPlugin<Props>;
+export declare const withAndroidSettingsGradle: ConfigPlugin<Props>;
 export declare function updateAndroidSettingsGradle({ contents, buildFromSource, }: {
     contents: string;
     buildFromSource?: boolean;

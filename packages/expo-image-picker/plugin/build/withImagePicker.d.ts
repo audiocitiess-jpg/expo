@@ -16,5 +16,6 @@ type Props = {
     };
 };
 export declare const withAndroidImagePickerPermissions: ConfigPlugin<Props | void>;
-declare const _default: ConfigPlugin<void | Props>;
+export declare const plugin: ConfigPlugin<void | Props>;
+declare const _default: (props?: Props) => [string, Props];
 export default _default;

@@ -14,7 +14,7 @@ interface Props {
   useSQLCipher?: boolean;
   useLibSQL?: boolean;
   withSQLiteVecExtension?: boolean;
-  android: {
+  android?: {
     customBuildFlags?: string;
     enableFTS?: boolean;
     useSQLCipher?: boolean;
@@ -22,7 +22,7 @@ interface Props {
     useSQLiteVec?: boolean;
     withSQLiteVecExtension?: boolean;
   };
-  ios: {
+  ios?: {
     customBuildFlags?: string;
     enableFTS?: boolean;
     useSQLCipher?: boolean;
@@ -142,4 +142,6 @@ function updateIOSBuildPropertyIfNeeded(
   return properties;
 }
 
-export default createRunOncePlugin(withSQLite, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withSQLite, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

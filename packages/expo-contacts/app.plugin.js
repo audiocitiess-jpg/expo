@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withContacts');
+const { plugin } = require('./plugin/build/withContacts');
+module.exports = plugin;

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.withForegroundServiceIcon = exports.META_DATA_FOREGROUND_SERVICE_ICON = exports.FOREGROUND_SERVICE_ICON_RESOURCE = exports.FOREGROUND_SERVICE_ICON = exports.dpiValues = exports.ANDROID_RES_PATH = void 0;
+exports.plugin = exports.withForegroundServiceIcon = exports.META_DATA_FOREGROUND_SERVICE_ICON = exports.FOREGROUND_SERVICE_ICON_RESOURCE = exports.FOREGROUND_SERVICE_ICON = exports.dpiValues = exports.ANDROID_RES_PATH = void 0;
 exports.setForegroundServiceIconAsync = setForegroundServiceIconAsync;
 const image_utils_1 = require("@expo/image-utils");
 const config_plugins_1 = require("expo/config-plugins");
@@ -132,4 +132,5 @@ const withLocation = (config, { locationAlwaysAndWhenInUsePermission, locationAl
         enableAndroidForegroundService && 'android.permission.FOREGROUND_SERVICE_LOCATION',
     ].filter(Boolean));
 };
-exports.default = (0, config_plugins_1.createRunOncePlugin)(withLocation, pkg.name, pkg.version);
+exports.plugin = (0, config_plugins_1.createRunOncePlugin)(withLocation, pkg.name, pkg.version);
+exports.default = (props = {}) => [pkg.name, props];

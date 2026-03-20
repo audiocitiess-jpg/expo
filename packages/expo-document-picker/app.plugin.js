@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withDocumentPicker');
+const { plugin } = require('./plugin/build/withDocumentPicker');
+module.exports = plugin;

@@ -4,6 +4,19 @@
   "description": "Provides an API to compose mails using OS specific UI",
   "main": "build/MailComposer.js",
   "types": "build/MailComposer.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/MailComposer.d.ts",
+      "default": "./build/MailComposer.js"
+    },
+    "./plugin": {
+      "types": "./plugin/build/withMailComposer.d.ts",
+      "default": "./plugin/build/withMailComposer.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*.js",
+    "./*.js": "./*.js"
+  },
   "sideEffects": false,
   "scripts": {
     "build": "expo-module build",

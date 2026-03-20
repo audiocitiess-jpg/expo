@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.plugin = void 0;
 const config_plugins_1 = require("@expo/config-plugins");
 const parseIntentFilters_1 = require("./android/parseIntentFilters");
 const withAndroidIntentFilters_1 = require("./android/withAndroidIntentFilters");
@@ -103,4 +104,5 @@ const withShareExtension = (config, props) => {
     }
     return (0, config_plugins_1.withPlugins)(config, plugins);
 };
-exports.default = (0, config_plugins_1.createRunOncePlugin)(withShareExtension, pkg.name, pkg.version);
+exports.plugin = (0, config_plugins_1.createRunOncePlugin)(withShareExtension, pkg.name, pkg.version);
+exports.default = (props = {}) => [pkg.name, props];

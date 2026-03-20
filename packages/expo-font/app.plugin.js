@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withFonts');
+const { plugin } = require('./plugin/build/withFonts');
+module.exports = plugin;

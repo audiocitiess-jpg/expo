@@ -69,7 +69,7 @@ export type ActivationRuleOptions = {
     supportsAttachmentsWithMaxCount?: number;
 };
 export type ActivationRule = ActivationRuleOptions | string;
-export type ShareExtensionConfigPluginProps = {
+export type Props = {
     ios?: {
         enabled?: boolean;
         extensionBundleIdentifier?: string;

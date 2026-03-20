@@ -5,11 +5,11 @@ import { withAssetsIos } from './withAssetsIos';
 
 const pkg = require('expo-asset/package.json');
 
-export type AssetProps = {
+export type Props = {
   assets?: string[];
 };
 
-const withAssets: ConfigPlugin<AssetProps | null> = (config, props) => {
+const withAssets: ConfigPlugin<Props | null> = (config, props) => {
   if (!props) {
     return config;
   }
@@ -24,4 +24,6 @@ const withAssets: ConfigPlugin<AssetProps | null> = (config, props) => {
   return config;
 };
 
-export default createRunOncePlugin(withAssets, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withAssets, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

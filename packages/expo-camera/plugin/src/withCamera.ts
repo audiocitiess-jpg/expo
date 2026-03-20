@@ -13,14 +13,14 @@ const CAMERA_USAGE = 'Allow $(PRODUCT_NAME) to access your camera';
 const MICROPHONE_USAGE = 'Allow $(PRODUCT_NAME) to access your microphone';
 const BARCODE_SCANNER_KEY = 'expo.camera.barcode-scanner-enabled';
 
-const withCamera: ConfigPlugin<
-  {
-    cameraPermission?: string | false;
-    microphonePermission?: string | false;
-    recordAudioAndroid?: boolean;
-    barcodeScannerEnabled?: boolean;
-  } | void
-> = (
+type Props = {
+  cameraPermission?: string | false;
+  microphonePermission?: string | false;
+  recordAudioAndroid?: boolean;
+  barcodeScannerEnabled?: boolean;
+};
+
+const withCamera: ConfigPlugin<Props | void> = (
   config,
   {
     cameraPermission,
@@ -68,4 +68,6 @@ const withCamera: ConfigPlugin<
   return config;
 };
 
-export default createRunOncePlugin(withCamera, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withCamera, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

@@ -10,6 +10,10 @@
     ".": {
       "types": "./build/StatusBar.d.ts",
       "default": "./src/StatusBar.ts"
+    },
+    "./plugin": {
+      "types": "./plugin/build/withStatusBar.d.ts",
+      "default": "./plugin/build/withStatusBar.js"
     }
   },
   "scripts": {

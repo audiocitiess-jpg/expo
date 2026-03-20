@@ -9,11 +9,11 @@ import {
 import { copyFileSync } from 'fs';
 import { basename, resolve } from 'path';
 
-import { NotificationsPluginProps } from './withNotifications';
+import { Props } from './withNotifications';
 
 const ERROR_MSG_PREFIX = 'An error occurred while configuring iOS notifications. ';
 
-export const withNotificationsIOS: ConfigPlugin<NotificationsPluginProps> = (
+export const withNotificationsIOS: ConfigPlugin<Props> = (
   config,
   { mode = 'development', sounds = [], enableBackgroundRemoteNotifications }
 ) => {

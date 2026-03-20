@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withDevMenu');
+const { plugin } = require('./plugin/build/withDevMenu');
+module.exports = plugin;

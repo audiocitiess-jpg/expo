@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.INITIAL_ORIENTATION_KEY = void 0;
+exports.plugin = exports.INITIAL_ORIENTATION_KEY = void 0;
 exports.setInitialOrientation = setInitialOrientation;
 const assert_1 = __importDefault(require("assert"));
 const config_plugins_1 = require("expo/config-plugins");
@@ -41,4 +41,5 @@ function setInitialOrientation(config, infoPlist) {
     infoPlist[exports.INITIAL_ORIENTATION_KEY] = OrientationLock[initialOrientation];
     return infoPlist;
 }
-exports.default = (0, config_plugins_1.createRunOncePlugin)(withScreenOrientationViewController, pkg.name, pkg.version);
+exports.plugin = (0, config_plugins_1.createRunOncePlugin)(withScreenOrientationViewController, pkg.name, pkg.version);
+exports.default = (props = {}) => [pkg.name, props];

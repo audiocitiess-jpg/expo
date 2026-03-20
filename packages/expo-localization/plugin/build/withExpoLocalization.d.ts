@@ -1,5 +1,5 @@
-import type { ExpoConfig } from 'expo/config';
-type ConfigPluginProps = {
+import { ConfigPlugin } from 'expo/config-plugins';
+type Props = {
     supportsRTL?: boolean;
     forcesRTL?: boolean;
     allowDynamicLocaleChangesAndroid?: boolean;
@@ -9,5 +9,6 @@ type ConfigPluginProps = {
     };
 };
 export declare function convertBcp47ToResourceQualifier(locale: string): string;
-declare function withExpoLocalization(config: ExpoConfig, data?: ConfigPluginProps): ExpoConfig;
-export default withExpoLocalization;
+export declare const plugin: ConfigPlugin<Props | undefined>;
+declare const _default: (props?: Props) => [string, Props];
+export default _default;

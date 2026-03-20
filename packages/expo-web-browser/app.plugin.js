@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withWebBrowser');
+const { plugin } = require('./plugin/build/withWebBrowser');
+module.exports = plugin;

@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withBackgroundFetch');
+const { plugin } = require('./plugin/build/withBackgroundFetch');
+module.exports = plugin;

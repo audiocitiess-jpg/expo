@@ -4,6 +4,19 @@
   "description": "Provides an interface for native user localization information.",
   "main": "build/Localization.js",
   "types": "build/Localization.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/Localization.d.ts",
+      "default": "./build/Localization.js"
+    },
+    "./plugin": {
+      "types": "./plugin/build/withExpoLocalization.d.ts",
+      "default": "./plugin/build/withExpoLocalization.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*.js",
+    "./*.js": "./*.js"
+  },
   "sideEffects": false,
   "scripts": {
     "build": "expo-module build",

@@ -8,13 +8,13 @@ import { withAppGroupId } from './ios/withAppGroupId';
 import withIosWarning from './ios/withIosWarning';
 import { withShareExtensionFiles } from './ios/withShareExtensionFiles';
 import { withShareExtensionXcodeProject } from './ios/withShareExtensionXcodeProject';
-import { ShareExtensionConfigPluginProps } from './sharingPlugin.types';
+import { Props } from './sharingPlugin.types';
 import { withConfig } from './withConfig';
 
 const EXPO_SHARE_EXTENSION_TARGET_NAME = 'expo-sharing-extension';
 const pkg = require('expo-sharing/package.json');
 
-type ShareExtensionConfigPlugin = ConfigPlugin<ShareExtensionConfigPluginProps>;
+type ShareExtensionConfigPlugin = ConfigPlugin<Props>;
 
 const withShareExtension: ShareExtensionConfigPlugin = (config, props?) => {
   let plugins: (StaticPlugin | ConfigPlugin | string)[] = [];
@@ -129,4 +129,6 @@ const withShareExtension: ShareExtensionConfigPlugin = (config, props?) => {
   return withPlugins(config, plugins);
 };
 
-export default createRunOncePlugin(withShareExtension, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withShareExtension, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

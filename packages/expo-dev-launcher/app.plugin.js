@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withDevLauncher');
+const { plugin } = require('./plugin/build/withDevLauncher');
+module.exports = plugin;

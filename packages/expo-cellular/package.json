@@ -4,6 +4,19 @@
   "description": "Provides information about the user’s cellular service provider",
   "main": "build/Cellular.js",
   "types": "build/Cellular.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/Cellular.d.ts",
+      "default": "./build/Cellular.js"
+    },
+    "./plugin": {
+      "types": "./plugin/build/withCellular.d.ts",
+      "default": "./plugin/build/withCellular.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*.js",
+    "./*.js": "./*.js"
+  },
   "scripts": {
     "build": "expo-module build",
     "clean": "expo-module clean",

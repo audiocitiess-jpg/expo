@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withLocation');
+const { plugin } = require('./plugin/build/withLocation');
+module.exports = plugin;

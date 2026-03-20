@@ -9,7 +9,7 @@ import {
 import fs from 'fs';
 import path from 'path';
 
-export type PluginConfig = {
+export type Props = {
   experimentalLauncherActivity?: boolean;
 };
 

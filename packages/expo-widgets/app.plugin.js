@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/index');
+const { plugin } = require('./plugin/build');
+module.exports = plugin;

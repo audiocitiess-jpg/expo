@@ -6,4 +6,6 @@ const withBrightness: ConfigPlugin = (config) => {
   return AndroidConfig.Permissions.withPermissions(config, ['android.permission.WRITE_SETTINGS']);
 };
 
-export default createRunOncePlugin(withBrightness, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withBrightness, pkg.name, pkg.version);
+
+export default (): string => pkg.name;

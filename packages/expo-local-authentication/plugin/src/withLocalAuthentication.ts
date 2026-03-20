@@ -3,10 +3,11 @@ import { AndroidConfig, ConfigPlugin, IOSConfig, createRunOncePlugin } from 'exp
 const pkg = require('expo-local-authentication/package.json');
 const FACE_ID_USAGE = 'Allow $(PRODUCT_NAME) to use Face ID';
 
-const withLocalAuthentication: ConfigPlugin<{ faceIDPermission?: string | false } | void> = (
-  config,
-  { faceIDPermission } = {}
-) => {
+type Props = {
+  faceIDPermission?: string | false;
+};
+
+const withLocalAuthentication: ConfigPlugin<Props | void> = (config, { faceIDPermission } = {}) => {
   IOSConfig.Permissions.createPermissionsPlugin({
     NSFaceIDUsageDescription: FACE_ID_USAGE,
   })(config, {
@@ -19,4 +20,6 @@ const withLocalAuthentication: ConfigPlugin<{ faceIDPermission?: string | false 
   ]);
 };
 
-export default createRunOncePlugin(withLocalAuthentication, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withLocalAuthentication, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

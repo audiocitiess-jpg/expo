@@ -4,10 +4,11 @@ const pkg = require('expo-contacts/package.json');
 
 const CONTACTS_USAGE = 'Allow $(PRODUCT_NAME) to access your contacts';
 
-const withContacts: ConfigPlugin<{ contactsPermission?: string } | void> = (
-  config,
-  { contactsPermission } = {}
-) => {
+type Props = {
+  contactsPermission?: string;
+};
+
+const withContacts: ConfigPlugin<Props | void> = (config, { contactsPermission } = {}) => {
   IOSConfig.Permissions.createPermissionsPlugin({
     NSContactsUsageDescription: CONTACTS_USAGE,
   })(config, {
@@ -20,4 +21,6 @@ const withContacts: ConfigPlugin<{ contactsPermission?: string } | void> = (
   ]);
 };
 
-export default createRunOncePlugin(withContacts, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withContacts, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

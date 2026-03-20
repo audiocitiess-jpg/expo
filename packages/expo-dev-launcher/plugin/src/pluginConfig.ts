@@ -3,7 +3,7 @@ import { validate, type JSONSchema } from '@expo/schema-utils';
 /**
  * Type representing base dev launcher configuration.
  */
-export type PluginConfigType = PluginConfigOptionsByPlatform & PluginConfigOptions;
+export type Props = PluginConfigOptionsByPlatform & PluginConfigOptions;
 
 /**
  * Type representing available configuration for each platform.
@@ -42,7 +42,7 @@ export type PluginConfigOptions = {
   launchModeExperimental?: 'most-recent' | 'launcher';
 };
 
-const schema: JSONSchema<PluginConfigType> = {
+const schema: JSONSchema<Props> = {
   title: 'expo-dev-launcher',
   type: 'object',
   properties: {
@@ -94,7 +94,7 @@ const schema: JSONSchema<PluginConfigType> = {
 /**
  * @ignore
  */
-export function validateConfig<T>(config: T): PluginConfigType {
+export function validateConfig<T>(config: T): Props {
   validate(schema, config);
 
   if (

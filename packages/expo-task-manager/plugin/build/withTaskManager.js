@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.plugin = void 0;
 const config_plugins_1 = require("expo/config-plugins");
 const pkg = require('expo-task-manager/package.json');
 const withTaskManager = (config) => {
@@ -14,4 +15,5 @@ const withTaskManager = (config) => {
     });
     return config;
 };
-exports.default = (0, config_plugins_1.createRunOncePlugin)(withTaskManager, pkg.name, pkg.version);
+exports.plugin = (0, config_plugins_1.createRunOncePlugin)(withTaskManager, pkg.name, pkg.version);
+exports.default = () => pkg.name;

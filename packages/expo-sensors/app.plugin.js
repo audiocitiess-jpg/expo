@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withSensors')
+const { plugin } = require('./plugin/build/withSensors');
+module.exports = plugin;

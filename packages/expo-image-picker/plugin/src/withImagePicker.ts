@@ -133,4 +133,6 @@ const withImagePicker: ConfigPlugin<Props | void> = (
   return config;
 };
 
-export default createRunOncePlugin(withImagePicker, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withImagePicker, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

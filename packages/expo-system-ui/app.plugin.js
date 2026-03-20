@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withSystemUI');
+const { plugin } = require('./plugin/build/withSystemUI');
+module.exports = plugin;

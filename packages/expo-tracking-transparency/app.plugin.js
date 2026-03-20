@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withTrackingTransparency');
+const { plugin } = require('./plugin/build/withTrackingTransparency');
+module.exports = plugin;

@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withAudio');
+const { plugin } = require('./plugin/build/withAudio');
+module.exports = plugin;

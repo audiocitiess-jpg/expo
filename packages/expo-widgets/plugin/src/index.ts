@@ -12,7 +12,7 @@ import withTargetXcodeProject from './xcode/withTargetXcodeProject';
 
 const pkg = require('expo-widgets/package.json');
 
-type ExpoWidgetsConfigPluginProps = {
+type Props = {
   // Widget target app bundle identifier. Defaults to `<main app bundle identifier>.ExpoWidgetsTarget`.
   bundleIdentifier?: string;
   // App group identifier used for communication between the main app and widgets. Defaults to `group.<main app bundle identifier>`.
@@ -24,7 +24,7 @@ type ExpoWidgetsConfigPluginProps = {
   widgets?: WidgetConfig[];
 };
 
-const withWidgets: ConfigPlugin<ExpoWidgetsConfigPluginProps | undefined> = (config, props) => {
+const withWidgets: ConfigPlugin<Props | undefined> = (config, props) => {
   let plugins: (StaticPlugin | ConfigPlugin | string)[] = [];
   const deploymentTarget = '16.2';
   const targetName = 'ExpoWidgetsTarget';
@@ -91,4 +91,6 @@ const withWidgets: ConfigPlugin<ExpoWidgetsConfigPluginProps | undefined> = (con
   return withPlugins(config, plugins);
 };
 
-export default createRunOncePlugin(withWidgets, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withWidgets, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

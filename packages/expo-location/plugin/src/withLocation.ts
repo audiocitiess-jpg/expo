@@ -138,17 +138,17 @@ function removeForegroundServiceIconImageFiles(projectRoot: string) {
   });
 }
 
-const withLocation: ConfigPlugin<
-  {
-    locationAlwaysAndWhenInUsePermission?: string | false;
-    locationAlwaysPermission?: string | false;
-    locationWhenInUsePermission?: string | false;
-    isIosBackgroundLocationEnabled?: boolean;
-    isAndroidBackgroundLocationEnabled?: boolean;
-    isAndroidForegroundServiceEnabled?: boolean;
-    androidForegroundServiceIcon?: string;
-  } | void
-> = (
+type Props = {
+  locationAlwaysAndWhenInUsePermission?: string | false;
+  locationAlwaysPermission?: string | false;
+  locationWhenInUsePermission?: string | false;
+  isIosBackgroundLocationEnabled?: boolean;
+  isAndroidBackgroundLocationEnabled?: boolean;
+  isAndroidForegroundServiceEnabled?: boolean;
+  androidForegroundServiceIcon?: string;
+};
+
+const withLocation: ConfigPlugin<Props | void> = (
   config,
   {
     locationAlwaysAndWhenInUsePermission,
@@ -199,4 +199,6 @@ const withLocation: ConfigPlugin<
   );
 };
 
-export default createRunOncePlugin(withLocation, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withLocation, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

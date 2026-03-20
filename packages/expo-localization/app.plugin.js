@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withExpoLocalization');
+const { plugin } = require('./plugin/build/withExpoLocalization');
+module.exports = plugin;

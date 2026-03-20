@@ -1,7 +1,7 @@
 /**
  * Type representing base dev launcher configuration.
  */
-export type PluginConfigType = PluginConfigOptionsByPlatform & PluginConfigOptions;
+export type Props = PluginConfigOptionsByPlatform & PluginConfigOptions;
 /**
  * Type representing available configuration for each platform.
  */
@@ -40,4 +40,4 @@ export type PluginConfigOptions = {
 /**
  * @ignore
  */
-export declare function validateConfig<T>(config: T): PluginConfigType;
+export declare function validateConfig<T>(config: T): Props;

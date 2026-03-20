@@ -68,7 +68,7 @@ export interface SharedBuildConfigFields {
  * Platform-specific values take precedence over top-level values.
  */
 export function resolveConfigValue<K extends keyof SharedBuildConfigFields>(
-  config: PluginConfigType,
+  config: Props,
   platform: 'android' | 'ios',
   key: K
 ): SharedBuildConfigFields[K] {
@@ -78,7 +78,7 @@ export function resolveConfigValue<K extends keyof SharedBuildConfigFields>(
 /**
  * Interface representing base build properties configuration.
  */
-export interface PluginConfigType extends SharedBuildConfigFields {
+export interface Props extends SharedBuildConfigFields {
   /**
    * Interface representing available configuration for Android native build properties.
    * @platform android
@@ -604,7 +604,7 @@ export interface PluginConfigTypeAndroidQueriesData {
   mimeType?: string;
 }
 
-const schema: JSONSchema<PluginConfigType> = {
+const schema: JSONSchema<Props> = {
   title: 'expo-build-properties',
   type: 'object',
   properties: {
@@ -802,7 +802,7 @@ const schema: JSONSchema<PluginConfigType> = {
  * @param config The validated config passed from Ajv.
  * @ignore
  */
-function maybeThrowInvalidVersions(config: PluginConfigType) {
+function maybeThrowInvalidVersions(config: Props) {
   const checkItems = [
     {
       name: 'android.minSdkVersion',
@@ -890,7 +890,7 @@ function getHermesCompilerVersion(projectRoot: string): string | null {
 /**
  * @ignore
  */
-export function validateConfig(config: unknown, projectRoot?: string): PluginConfigType {
+export function validateConfig(config: unknown, projectRoot?: string): Props {
   fixupDeprecatedEnableProguardInReleaseBuilds(config);
   validate(schema, config);
   maybeThrowInvalidVersions(config);

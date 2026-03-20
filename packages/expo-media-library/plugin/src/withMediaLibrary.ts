@@ -35,15 +35,15 @@ const withMediaLibraryExternalStorage: ConfigPlugin = (config) => {
   });
 };
 
-const withMediaLibrary: ConfigPlugin<
-  {
-    photosPermission?: string | false;
-    savePhotosPermission?: string | false;
-    isAccessMediaLocationEnabled?: boolean;
-    preventAutomaticLimitedAccessAlert?: boolean;
-    granularPermissions?: GranularPermission[];
-  } | void
-> = (
+type Props = {
+  photosPermission?: string | false;
+  savePhotosPermission?: string | false;
+  isAccessMediaLocationEnabled?: boolean;
+  preventAutomaticLimitedAccessAlert?: boolean;
+  granularPermissions?: GranularPermission[];
+};
+
+const withMediaLibrary: ConfigPlugin<Props | void> = (
   config,
   {
     photosPermission,
@@ -82,4 +82,6 @@ const withMediaLibrary: ConfigPlugin<
   return withMediaLibraryExternalStorage(config);
 };
 
-export default createRunOncePlugin(withMediaLibrary, pkg.name, pkg.version);
+export const plugin = createRunOncePlugin(withMediaLibrary, pkg.name, pkg.version);
+
+export default (props: Props = {}): [string, Props] => [pkg.name, props];

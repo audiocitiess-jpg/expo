@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withExpoImage');
+const { plugin } = require('./plugin/build/withExpoImage');
+module.exports = plugin;

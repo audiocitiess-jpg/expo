@@ -1,1 +1,2 @@
-module.exports = require('./plugin/build/withFileSystem');
+const { plugin } = require('./plugin/build/withFileSystem');
+module.exports = plugin;
