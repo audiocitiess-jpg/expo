@@ -5,6 +5,8 @@
   "main": "build/Brightness.js",
   "types": "build/Brightness.d.ts",
   "exports": {
+    "./app.plugin.js": "./app.plugin.js",
+    "./package.json": "./package.json",
     ".": {
       "types": "./build/Brightness.d.ts",
       "default": "./build/Brightness.js"
@@ -12,10 +14,7 @@
     "./plugin": {
       "types": "./plugin/build/withBrightness.d.ts",
       "default": "./plugin/build/withBrightness.js"
-    },
-    "./package.json": "./package.json",
-    "./*": "./*.js",
-    "./*.js": "./*.js"
+    }
   },
   "sideEffects": false,
   "scripts": {

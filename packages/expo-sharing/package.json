@@ -5,6 +5,8 @@
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
   "exports": {
+    "./app.plugin.js": "./app.plugin.js",
+    "./package.json": "./package.json",
     ".": {
       "types": "./build/src/index.d.ts",
       "default": "./build/src/index.js"
@@ -12,10 +14,7 @@
     "./plugin": {
       "types": "./plugin/build/index.d.ts",
       "default": "./plugin/build/index.js"
-    },
-    "./package.json": "./package.json",
-    "./*": "./*.js",
-    "./*.js": "./*.js"
+    }
   },
   "sideEffects": false,
   "scripts": {

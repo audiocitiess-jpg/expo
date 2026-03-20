@@ -5,6 +5,8 @@
   "main": "build/BackgroundTask.js",
   "types": "build/BackgroundTask.d.ts",
   "exports": {
+    "./app.plugin.js": "./app.plugin.js",
+    "./package.json": "./package.json",
     ".": {
       "types": "./build/BackgroundTask.d.ts",
       "default": "./build/BackgroundTask.js"
@@ -12,10 +14,7 @@
     "./plugin": {
       "types": "./plugin/build/withBackgroundTask.d.ts",
       "default": "./plugin/build/withBackgroundTask.js"
-    },
-    "./package.json": "./package.json",
-    "./*": "./*.js",
-    "./*.js": "./*.js"
+    }
   },
   "sideEffects": false,
   "scripts": {

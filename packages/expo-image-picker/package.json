@@ -5,6 +5,8 @@
   "main": "build/ImagePicker.js",
   "types": "build/ImagePicker.d.ts",
   "exports": {
+    "./app.plugin.js": "./app.plugin.js",
+    "./package.json": "./package.json",
     ".": {
       "types": "./build/ImagePicker.d.ts",
       "default": "./build/ImagePicker.js"
@@ -12,10 +14,7 @@
     "./plugin": {
       "types": "./plugin/build/withImagePicker.d.ts",
       "default": "./plugin/build/withImagePicker.js"
-    },
-    "./package.json": "./package.json",
-    "./*": "./*.js",
-    "./*.js": "./*.js"
+    }
   },
   "sideEffects": false,
   "scripts": {

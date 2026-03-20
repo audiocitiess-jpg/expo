@@ -5,6 +5,8 @@
   "main": "build/ScreenOrientation.js",
   "types": "build/ScreenOrientation.d.ts",
   "exports": {
+    "./app.plugin.js": "./app.plugin.js",
+    "./package.json": "./package.json",
     ".": {
       "types": "./build/ScreenOrientation.d.ts",
       "default": "./build/ScreenOrientation.js"
@@ -12,10 +14,7 @@
     "./plugin": {
       "types": "./plugin/build/withScreenOrientation.d.ts",
       "default": "./plugin/build/withScreenOrientation.js"
-    },
-    "./package.json": "./package.json",
-    "./*": "./*.js",
-    "./*.js": "./*.js"
+    }
   },
   "sideEffects": false,
   "scripts": {

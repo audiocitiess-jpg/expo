@@ -5,6 +5,8 @@
   "main": "build/TrackingTransparency.js",
   "types": "build/TrackingTransparency.d.ts",
   "exports": {
+    "./app.plugin.js": "./app.plugin.js",
+    "./package.json": "./package.json",
     ".": {
       "types": "./build/TrackingTransparency.d.ts",
       "default": "./build/TrackingTransparency.js"
@@ -12,10 +14,7 @@
     "./plugin": {
       "types": "./plugin/build/withTrackingTransparency.d.ts",
       "default": "./plugin/build/withTrackingTransparency.js"
-    },
-    "./package.json": "./package.json",
-    "./*": "./*.js",
-    "./*.js": "./*.js"
+    }
   },
   "scripts": {
     "build": "expo-module build",

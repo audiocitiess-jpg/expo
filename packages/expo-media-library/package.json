@@ -5,17 +5,20 @@
   "main": "build/MediaLibrary.js",
   "types": "build/MediaLibrary.d.ts",
   "exports": {
+    "./app.plugin.js": "./app.plugin.js",
+    "./package.json": "./package.json",
     ".": {
       "types": "./build/MediaLibrary.d.ts",
       "default": "./build/MediaLibrary.js"
     },
+    "./next": {
+      "types": "./build/next/index.d.ts",
+      "default": "./build/next/index.js"
+    },
     "./plugin": {
       "types": "./plugin/build/withMediaLibrary.d.ts",
       "default": "./plugin/build/withMediaLibrary.js"
-    },
-    "./package.json": "./package.json",
-    "./*": "./*.js",
-    "./*.js": "./*.js"
+    }
   },
   "sideEffects": false,
   "scripts": {

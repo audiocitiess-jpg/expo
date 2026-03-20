@@ -16,6 +16,10 @@
       "types": "./build/legacy/index.d.ts",
       "default": "./src/legacy/index.ts"
     },
+    "./next": {
+      "types": "./build/index.d.ts",
+      "default": "./src/index.ts"
+    },
     "./plugin": {
       "types": "./plugin/build/withFileSystem.d.ts",
       "default": "./plugin/build/withFileSystem.js"

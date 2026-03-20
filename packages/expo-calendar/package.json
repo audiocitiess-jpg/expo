@@ -5,17 +5,20 @@
   "main": "build/Calendar.js",
   "types": "build/Calendar.d.ts",
   "exports": {
+    "./app.plugin.js": "./app.plugin.js",
+    "./package.json": "./package.json",
     ".": {
       "types": "./build/Calendar.d.ts",
       "default": "./build/Calendar.js"
     },
+    "./next": {
+      "types": "./build/next/index.d.ts",
+      "default": "./build/next/index.js"
+    },
     "./plugin": {
       "types": "./plugin/build/withCalendar.d.ts",
       "default": "./plugin/build/withCalendar.js"
-    },
-    "./package.json": "./package.json",
-    "./*": "./*.js",
-    "./*.js": "./*.js"
+    }
   },
   "sideEffects": false,
   "scripts": {
