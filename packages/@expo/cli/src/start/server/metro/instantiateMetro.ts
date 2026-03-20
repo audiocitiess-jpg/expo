@@ -249,6 +249,7 @@ export async function loadMetroConfigAsync(
     isNamedRequiresEnabled: env.EXPO_USE_METRO_REQUIRE,
     isReactServerComponentsEnabled: serverComponentsEnabled,
     getMetroBundler,
+    serverRoot,
   });
 
   event('config', {

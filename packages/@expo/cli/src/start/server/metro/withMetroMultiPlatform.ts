@@ -904,6 +904,7 @@ export async function withMetroMultiPlatformAsync(
     isTsconfigPathsEnabled,
     isAutolinkingResolverEnabled,
     isExporting,
+    serverRoot,
 
     isReactServerComponentsEnabled,
     getMetroBundler,
@@ -914,6 +915,7 @@ export async function withMetroMultiPlatformAsync(
     platformBundlers: PlatformBundlers;
     isAutolinkingResolverEnabled?: boolean;
     isExporting?: boolean;
+    serverRoot?: string;
 
     isReactServerComponentsEnabled: boolean;
     isNamedRequiresEnabled: boolean;
@@ -935,11 +937,11 @@ export async function withMetroMultiPlatformAsync(
   process.env.EXPO_PUBLIC_PROJECT_ROOT = process.env.EXPO_PUBLIC_PROJECT_ROOT ?? projectRoot;
 
   // This is used for running Expo CLI in development against projects outside the monorepo.
-  if (!isDirectoryIn(__dirname, projectRoot)) {
+  if (!isDirectoryIn(__dirname, serverRoot ?? projectRoot)) {
     const reactNativePolyfills: string[] = require('react-native/rn-get-polyfills')();
     watchFolders.push(
-      ...resolveWatchFolders('expo', { deep: false }),
       ...resolveWatchFolders('react-native', { deep: false }),
+      ...resolveWatchFolders('expo', { deep: true }),
       ...resolveWatchFolders('@expo/metro', { deep: true }),
       ...resolveWatchFolders('@expo/metro-runtime', { deep: true }),
       ...[config.resolver.emptyModulePath, metroOriginalModuleSystem, ...reactNativePolyfills]
